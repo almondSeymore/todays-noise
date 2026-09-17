@@ -1,5 +1,6 @@
 from datetime import date
-
+import os
+import tweepy
 
 GLYPH_HEIGHT = 9
 HALF_WIDTH = 5
@@ -50,6 +51,16 @@ def generate_noise(day=None):
 
     return "\n".join(output_lines)
 
+def post_to_x(text):
+    client = tweepy.Client(
+        consumer_key=os.environ["X_API_KEY"],
+        consumer_secret=os.environ["X_API_KEY_SECRET"],
+        access_token=os.environ["X_ACCESS_TOKEN"],
+        access_token_secret=os.environ["X_ACCESS_TOKEN_SECRET"],
+    )
+
+    response = client.create_tweet(text=text)
+    return response
 
 if __name__ == "__main__":
     print(generate_noise())
