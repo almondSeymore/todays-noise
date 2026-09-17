@@ -3,6 +3,10 @@ name: TODAYS NOISE
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: "0 8 * * *"
+      timezone: "America/Denver"
+
 jobs:
   post-noise:
     runs-on: ubuntu-latest
