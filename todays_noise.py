@@ -63,4 +63,6 @@ def post_to_x(text):
     return response
 
 if __name__ == "__main__":
-    print(generate_noise())
+    noise = generate_noise()
+    print(noise)
+    post_to_x(noise)
