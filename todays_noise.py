@@ -28,7 +28,6 @@ def generate_noise(day=None):
     if day is None:
         day = date.today()
 
-    # YYYYMMDD — same seed used by the AppleScript version
     seed = (day.year * 10000) + (day.month * 100) + day.day
 
     output_lines = []
